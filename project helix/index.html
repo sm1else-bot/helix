@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0f1720"><title>Helix · Adaptive reuse intelligence</title>
+  <link rel="stylesheet" href="/maximus.css"><link rel="stylesheet" href="/stage3.css"><script src="/maximus.js" defer></script>
+</head>
+<body>
+<div class="shell">
+  <aside class="aside">
+    <div><a class="brand" href="/">HELIX</a><h1>Find the place.<br>Imagine what’s next.</h1><p>Discover commercial spaces with potential for a new purpose.</p></div>
+    <nav class="stage-nav" aria-label="Investigation stages"><ol id="stage-nav"><li data-stage="0" class="active"><span>0</span>Starting point</li><li data-stage="1"><span>1</span>Property discovery</li><li data-stage="2"><span>2</span>Building investigation</li><li data-stage="3"><span>3</span>Business options</li><li data-stage="4"><span>4</span><a id="nav-finance" aria-disabled="true">Finance Lab</a></li><li data-stage="5"><span>5</span><a id="nav-report" aria-disabled="true">Investment memorandum</a></li></ol></nav><div class="step"><span id="stage-indicator">STAGE 0 · YOUR STARTING POINT</span><span class="track"><i id="progress"></i></span><span id="step-count">01 / 06</span></div>
+  </aside>
+  <main class="main">
+    <section class="content" id="intake-view">
+      <div class="eyebrow">A few details to begin</div><h2>What are you looking to build?</h2>
+      <p class="intro">Share your market, budget, and business interests. You can edit them later.</p>
+      <form id="intake-form" novalidate>
+        <fieldset class="field"><legend>Where should we look?</legend><div class="choices">
+          <label class="choice"><input type="radio" name="city" value="Houston, TX"><span>Houston, TX</span></label>
+          <label class="choice"><input type="radio" name="city" value="Los Angeles, CA"><span>Los Angeles, CA</span></label>
+        </div></fieldset>
+        <div class="field"><label for="budget">What’s your total budget?</label><div class="money"><b>$</b><input class="control" id="budget" inputmode="decimal" autocomplete="off" placeholder="e.g. 900,000"></div><p class="hint">USD · Include the full amount available for this project.</p></div>
+        <fieldset class="field"><legend>How will you fund it?</legend><div class="choices">
+          <label class="choice"><input type="radio" name="financing" value="cash"><span>Cash</span></label>
+          <label class="choice"><input type="radio" name="financing" value="financing"><span>Financing</span></label>
+        </div></fieldset>
+        <div class="field"><label for="preferences">What kinds of businesses interest you?</label><textarea class="control" id="preferences" placeholder="Creative workspace, community services, food, recreation…"></textarea><p class="hint">Optional. A few words can help guide discovery.</p></div>
+        <label class="ideas"><input id="open-ideas" type="checkbox"><span><strong>I’m open to ideas</strong><small>Show me possibilities I may not have considered.</small></span></label>
+        <div class="actions"><span class="hint">Adaptive reuse is built into every search.</span><button class="primary" type="submit" id="find">Find Properties <span aria-hidden="true">→</span></button></div>
+        <p class="status" id="status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="content wide" id="discovery-view" hidden>
+      <div class="result-top"><div><div class="eyebrow">Stage 1 · Property discovery</div><h2>Real CoStar opportunities</h2><p id="intake-summary" class="intro"></p></div><button class="secondary" id="edit-intake">← Edit intake</button></div>
+      <div class="controls panel">
+        <label for="horizon">Lease horizon</label><select id="horizon" class="control"><option value="">Compare 3, 5 &amp; 10 years</option><option value="3">3 years</option><option value="5">5 years</option><option value="10">10 years</option></select>
+        <label for="allocation">Acquisition / occupancy budget <b id="allocation-value">100%</b></label><input id="allocation" type="range" min="0" max="100" step="5" value="100">
+        <div class="hint" id="allocation-note">All of the total budget is initially available for acquisition or occupancy.</div>
+        <div id="fitout-question" class="fitout-question" hidden><strong>Do you have a separate fit-out budget?</strong><label><input type="radio" name="separate-fitout" value="yes"> Yes</label><label><input type="radio" name="separate-fitout" value="no"> No</label><label id="fitout-amount-wrap" hidden>Separate amount (USD)<input id="fitout-amount" class="control" inputmode="decimal" placeholder="Optional amount"></label></div>
+      </div>
+      <div class="result-meta" id="result-meta" role="status"></div><div id="results" class="cards"></div>
+      <p class="status" id="discovery-error" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="content wide investigation-page" id="stage2" hidden aria-live="polite">
+      <button class="secondary investigation-back" id="investigation-back" type="button">← Back to properties</button>
+      <header class="investigation-head"><div><div class="eyebrow">Stage 2 · Building investigation</div><h2 id="investigation-title">Property intelligence</h2><p id="investigation-summary" class="intro"></p></div><span class="investigation-state" id="investigation-state">Preparing investigation</span></header>
+      <section class="investigation-progress" id="investigation-progress-wrap"><h3>Investigation activity</h3><ol id="investigation-progress"></ol></section>
+      <section class="investigation-section"><h3>Property overview</h3><div id="investigation-overview" class="investigation-grid"></div></section>
+      <section class="investigation-section investigation-explore" id="investigation-explore">
+        <div><div class="eyebrow">Explore the property</div><h3>Inside and around the building</h3></div>
+        <div id="matterport-viewer-wrap" class="matterport-viewer-wrap" hidden><div class="viewer-title"><strong>Interactive Matterport tour</strong><a id="matterport-open" target="_blank" rel="noopener noreferrer">Open full tour ↗</a></div><iframe id="matterport-frame" title="Interactive Matterport property tour" allow="fullscreen; xr-spatial-tracking; gyroscope; accelerometer" allowfullscreen loading="lazy"></iframe></div>
+        <p id="matterport-unavailable" class="investigation-empty" hidden></p>
+        <div id="vexcel-gallery" class="vexcel-gallery"></div>
+      </section>
+      <section class="investigation-section"><h3>What we found</h3><div id="investigation-physical"></div></section>
+      <section class="investigation-section"><h3>Evidence disagreements</h3><div id="investigation-contradictions"></div></section>
+      <section class="investigation-section"><h3>Property compliance preflight</h3><div id="investigation-compliance"></div></section>
+      <section class="investigation-section" id="investigation-next-section"><h3>Open property questions</h3><div id="investigation-unknowns"></div></section>
+      <div class="stage3-transition"><button class="primary" id="stage3-start" type="button" disabled>Explore business options →</button><p class="hint" id="stage3-transition-note">Complete the investigation to explore business options.</p></div>
+      <details class="handoff-details"><summary>Technical evidence and Stage 3 handoff</summary><p class="hint">Source records and machine-readable data are provided for review. Provider data may be incomplete or dated.</p><pre id="investigation-handoff"></pre></details>
+    </section>
+    <section class="content wide stage3-page" id="stage3" hidden>
+      <button class="stage3-back" id="stage3-back" type="button">← Back to investigation</button>
+      <header class="stage3-header"><div><p class="stage3-kicker">Stage 3 · Business options</p><h2>What could work here?</h2><p id="stage3-context" class="stage3-subtitle"></p></div><span class="stage3-chip">Conditional opportunities</span></header>
+      <div class="stage3-intro"><p>See which business types clear the building, budget and preliminary compliance checks for this space. Each option still needs the checks below.</p><div class="stage3-reserve"><label for="stage3-reserve">Cash reserve <span>optional</span></label><div><span>$</span><input id="stage3-reserve" type="number" min="0" step="any" inputmode="decimal" placeholder="Not provided"><button id="stage3-run" type="button">Find options</button></div><small>Leave blank if you haven’t chosen a reserve.</small></div></div>
+      <p id="stage3-status" class="stage3-status" role="status" aria-live="polite"></p>
+      <div id="stage3-results" hidden><div class="stage3-section-head"><div><p class="stage3-kicker">Your shortlist</p><h3>Opportunities to investigate</h3></div><span id="stage3-count" class="stage3-chip"></span></div><p class="stage3-caveat">These are conditional screening results. They are not legal approvals or verified business demand.</p><section id="opp-report" class="opp-report" aria-live="polite"><div class="opp-head"><div><p class="stage3-kicker">Opportunity intelligence · before you choose</p><h3>What the evidence supports, challenges and cannot establish</h3></div><span class="stage3-chip amber">AI assessment · not verified</span></div><p class="opp-note">GPT Sol reads the saved Stage 1 discovery, Stage 2 building evidence and this Stage 3 screening. It cannot change the ranking above. Every claim cites the evidence it rests on.</p><div class="opp-actions"><button id="opp-generate" type="button">Generate opportunity report</button><a id="opp-memo" class="opp-memo" hidden>Open investment memorandum →</a><span id="opp-status" class="opp-status" role="status"></span></div><div id="opp-body" hidden></div></section><div id="stage3-compare" class="stage3-compare"></div><div id="stage3-candidates" class="stage3-candidates"></div><details class="stage3-all"><summary id="stage3-all-label">Review all business outcomes</summary><div id="stage3-gates"></div></details><details class="stage3-debug"><summary>Complete deterministic output</summary><pre id="stage3-json"></pre></details></div>
+    </section>
+  </main>
+</div>
+</body></html>

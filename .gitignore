@@ -1,6 +1,16 @@
 .env
 .env.*
 !.env.example
+.verification-cache.json
+.stage2-handoffs.json
+.stage3-results.json
+.stage1-reports/
+.opportunity-reports/
+.opportunity-usage.jsonl
+.stage2-assets/
+/project helix/finance_lab/vendor/output/
+/project helix/stage3_engine/vendor/output/
+*.json.tmp
 __pycache__/
 playground/output/
 .DS_Store
@@ -14,3 +24,4 @@ reports/data-pilot/img/
 reports/data-pilot/sheets/
 reports/data-pilot/evidence/
 reports/data-pilot/keys.env
+.stage4-selections.json

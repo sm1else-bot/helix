@@ -1,0 +1,49 @@
+/* Stage 3 adopts Venture Suite's graphite glass, blue accents and restrained status colors. */
+.stage3-page{background:#0a0b0d;color:#ecedef;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:clamp(20px,3vw,38px);font-size:14px;line-height:1.5;box-shadow:0 18px 50px #142b2724}
+.stage3-page,.stage3-card,.stage3-candidates,.stage3-check,.stage3-metrics>div{min-width:0;overflow-wrap:anywhere}.stage3-page .stage3-candidates{grid-template-columns:minmax(0,1fr)}.stage3-page .stage3-metrics{grid-template-columns:repeat(3,minmax(0,1fr))}
+.stage3-page *{box-sizing:border-box}.stage3-page h2,.stage3-page h3,.stage3-page h4,.stage3-page p{margin:0}.stage3-page h2{font-size:clamp(28px,3.5vw,40px);letter-spacing:-.035em}.stage3-page h3{font-size:20px;letter-spacing:-.02em}.stage3-page h4{font-size:13px;color:#dce0e4}.stage3-page a{color:#92d9f0}.stage3-page button,.stage3-page input{font:inherit}.stage3-page button{cursor:pointer}.stage3-back{background:transparent;border:1px solid rgba(255,255,255,.18);border-radius:8px;padding:9px 13px;color:#e5e9ec}.stage3-back:hover{border-color:#00b0e6}.stage3-header{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin:27px 0}.stage3-kicker{font-size:11px;text-transform:uppercase;letter-spacing:.13em;font-weight:700;color:#80c6dc}.stage3-subtitle{margin-top:9px!important;color:#a8adb5}.stage3-chip{display:inline-flex;align-items:center;border:1px solid #355d50;background:#173329;color:#9bd2ae;border-radius:99px;padding:5px 10px;font-size:11px;font-weight:700;white-space:nowrap}.stage3-chip.amber{border-color:#685629;background:#30291a;color:#e9c66b}.stage3-chip.muted{border-color:#51443f;background:#2d2524;color:#e8a59b}.stage3-intro,.stage3-card,.stage3-all,.stage3-debug{border:1px solid rgba(255,255,255,.1);background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.022));border-radius:12px;padding:20px;box-shadow:inset 0 1px rgba(255,255,255,.05),0 10px 30px -18px #000}.stage3-intro>p,.stage3-caveat{color:#a8adb5}.stage3-reserve{margin-top:18px;max-width:430px}.stage3-reserve label{display:block;font-weight:650;margin-bottom:7px}.stage3-reserve label span,.stage3-reserve small{color:#a8adb5;font-weight:400}.stage3-reserve>div{display:flex;gap:8px;align-items:center}.stage3-reserve input{min-width:0;flex:1;background:#111418;color:#ecedef;border:1px solid #454b53;border-radius:8px;padding:10px}.stage3-reserve button{background:#1c6580;color:white;border:1px solid #277f9d;border-radius:8px;padding:10px 14px;font-weight:700}.stage3-reserve button:disabled{opacity:.55}.stage3-reserve small{display:block;margin-top:7px}.stage3-status{color:#b8c6c3;min-height:24px;margin:18px 0!important}.stage3-section-head{display:flex;justify-content:space-between;align-items:end;gap:12px;margin:26px 0 9px}.stage3-caveat{margin-bottom:15px!important;font-size:13px}.stage3-candidates{display:grid;gap:14px}.stage3-card-head{display:flex;justify-content:space-between;align-items:start;gap:12px}.stage3-rank{font-size:12px;color:#a8adb5}.stage3-card-head h3{margin-top:4px}.stage3-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:18px 0}.stage3-metrics>div,.stage3-check{background:rgba(0,0,0,.22);border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:12px}.stage3-metrics small,.stage3-metrics strong{display:block}.stage3-metrics small{color:#a8adb5}.stage3-metrics strong{font-size:18px;font-variant-numeric:tabular-nums}.stage3-check-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.stage3-check p,.stage3-list li{color:#bbc1c6;margin-top:6px;font-size:13px}.stage3-list{margin-top:16px}.stage3-list ul,.stage3-sources ul{padding-left:19px;margin:5px 0}.stage3-sources{margin-top:15px}.stage3-sources summary,.stage3-all summary,.stage3-debug summary{cursor:pointer;font-weight:650}.stage3-sources li{margin:10px 0;color:#b7bec4}.stage3-sources small{display:block;color:#858f98}.stage3-all,.stage3-debug{margin-top:20px}.stage3-gate{border-top:1px solid rgba(255,255,255,.09);padding:12px 0}.stage3-gate:first-child{margin-top:16px}.stage3-gate summary{display:flex;justify-content:space-between;gap:10px;align-items:center}.stage3-gate-detail{padding:10px 5px;color:#c6cdd1}.stage3-gate-detail .stage3-list{margin:5px 0}.stage3-debug pre{white-space:pre-wrap;overflow-wrap:anywhere;max-height:440px;overflow:auto;font-size:11px;color:#b5c7c0}.stage3-transition{margin:25px 0}.stage3-transition .hint{margin-top:8px}@media(max-width:650px){.stage3-header,.stage3-section-head{align-items:flex-start;flex-direction:column}.stage3-check-grid{grid-template-columns:1fr}.stage3-metrics{gap:5px}.stage3-metrics>div{padding:9px}.stage3-metrics strong{font-size:15px}.stage3-gate summary{align-items:flex-start;flex-direction:column}}
+/* Opportunity intelligence report and explicit business choice. */
+.opp-report{border:1px solid rgba(0,176,230,.28);background:linear-gradient(180deg,rgba(0,176,230,.07),rgba(255,255,255,.02));border-radius:12px;padding:20px;margin:0 0 18px}
+.opp-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.opp-head h3{margin-top:4px!important}
+.opp-note{color:#a8adb5;margin-top:10px!important;font-size:13px}
+.opp-actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:14px}
+.opp-actions button,.opp-choose button{background:#1c6580;color:#fff;border:1px solid #277f9d;border-radius:8px;padding:10px 14px;font-weight:700}
+.opp-actions button:disabled,.opp-choose button:disabled{opacity:.45;cursor:not-allowed}
+.opp-status{color:#b8c6c3;font-size:13px}
+.opp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px;margin-top:16px}
+.opp-section,.opp-card-notes{background:rgba(0,0,0,.22);border:1px solid rgba(255,255,255,.07);border-radius:8px;padding:14px}
+.opp-card-notes{margin-top:16px;border-color:rgba(0,176,230,.22)}
+.opp-claims{list-style:none;padding:0;margin:8px 0 0}
+.opp-claims li{color:#c6cdd1;font-size:13px;margin:0 0 11px}
+.opp-kind{display:inline-block;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;border-radius:4px;padding:1px 6px;border:1px solid #454b53;color:#c6cdd1}
+.opp-kind.observed{border-color:#355d50;color:#9bd2ae}
+.opp-kind.sourced_record{border-color:#277f9d;color:#92d9f0}
+.opp-kind.model_inference{border-color:#685629;color:#e9c66b}
+.opp-kind.unresolved_question{border-color:#51443f;color:#e8a59b}
+.opp-refs{display:block;margin-top:3px;font-size:11px;color:#7f8a94;cursor:help}
+.opp-refs code{font-size:10.5px;color:#858f98;background:rgba(255,255,255,.04);border-radius:4px;padding:1px 5px;cursor:help}
+.opp-meta{margin-top:14px;color:#a8adb5;font-size:13px}
+.opp-meta summary{cursor:pointer;font-weight:650;color:#dce0e4}
+.opp-meta p{margin-top:8px!important}
+.opp-choose{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.08)}
+.opp-choose small{color:#a8adb5}
+@media(max-width:640px){.opp-head{flex-direction:column}.opp-choose button{width:100%}}
+/* Comparison strip, shared questions, memorandum link */
+.stage3-compare{border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:16px 20px;margin:0 0 14px;background:rgba(255,255,255,.03)}
+.stage3-compare h4{margin:0 0 10px!important}
+.cmp-row{display:grid;grid-template-columns:170px 1fr 110px;gap:12px;align-items:center;margin:9px 0}
+.cmp-name{font-weight:650;font-size:13.5px}
+.cmp-track{position:relative;height:18px;background:rgba(255,255,255,.06);border-radius:3px}
+.cmp-band{position:absolute;top:4px;height:10px;border-radius:2px;background:#4f8fb0}
+.cmp-base{position:absolute;top:0;width:3px;height:18px;background:#ecedef;border-radius:1px}
+.cmp-budget{position:absolute;top:-5px;bottom:-5px;border-left:2px dashed #e8a59b}
+.cmp-val{font-size:12.5px;text-align:right;color:#bbc1c6;font-variant-numeric:tabular-nums}
+.stage3-compare small{color:#858f98}
+.stage3-common{border:1px dashed rgba(255,255,255,.18);border-radius:12px;padding:14px 18px}
+.stage3-common:empty{display:none}
+.stage3-common h4{margin:0 0 6px!important}
+.stage3-common li{color:#bbc1c6;font-size:13px;margin:4px 0}
+.opp-memo{color:#92d9f0;font-weight:700;text-decoration:none;border:1px solid #277f9d;border-radius:8px;padding:9px 13px}
+@media(max-width:640px){.cmp-row{grid-template-columns:100px 1fr 80px}}
+.opp-lead{margin-top:16px}.opp-more{margin-top:12px}.opp-more>summary{cursor:pointer;font-weight:650;color:#92d9f0}

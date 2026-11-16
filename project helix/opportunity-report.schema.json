@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Helix Opportunity Intelligence Report",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "investigation_id", "report_id", "created_at", "identity", "model", "context_coverage", "narrative", "readable_narrative", "evidence_index", "screening", "evidence", "limitations"],
+  "properties": {
+    "schema_version": {"const": "helix.opportunity-intelligence.v1"},
+    "investigation_id": {"type": "string", "pattern": "^[0-9a-f]{32}$"},
+    "report_id": {"type": "string", "pattern": "^[0-9a-f]{32}$"},
+    "created_at": {"type": "string"},
+    "identity": {"type": "object", "required": ["property_id", "listing_id", "space_id", "stage3_suite", "discovery_id"]},
+    "model": {"type": "object", "required": ["model", "id", "usage", "latency_ms"]},
+    "context_coverage": {"type": "object"},
+    "narrative": {"type": "object", "additionalProperties": false,
+      "required": ["executive_thesis", "market_listing_context", "physical_intelligence", "evidence_comparisons", "risks_and_unknowns", "candidates"],
+      "properties": {
+        "executive_thesis": {"$ref": "#/$defs/claims"}, "market_listing_context": {"$ref": "#/$defs/claims"},
+        "physical_intelligence": {"$ref": "#/$defs/claims"}, "evidence_comparisons": {"$ref": "#/$defs/claims"},
+        "risks_and_unknowns": {"$ref": "#/$defs/claims"},
+        "candidates": {"type": "array", "maxItems": 3, "items": {"type": "object", "additionalProperties": false,
+          "required": ["business", "claims"], "properties": {"business": {"type": "string"}, "claims": {"$ref": "#/$defs/claims"}}}}
+      }
+    },
+    "readable_narrative": {"type": "string", "minLength": 1},
+    "evidence_index": {"type": "object"},
+    "screening": {"type": "object", "required": ["summary", "candidate_order", "shortlist", "all_outcomes", "missing_evidence"],
+      "properties": {"candidate_order": {"type": "array", "maxItems": 3}, "all_outcomes": {"type": "array", "minItems": 26, "maxItems": 26}}},
+    "evidence": {"type": "object", "required": ["stage1", "stage2", "stage3"]},
+    "limitations": {"type": "array", "items": {"type": "string"}}
+  },
+  "$defs": {"claims": {"type": "array", "minItems": 1, "maxItems": 6, "items": {"type": "object", "additionalProperties": false,
+    "required": ["text", "kind", "evidence_ids"], "properties": {"text": {"type": "string", "minLength": 1, "maxLength": 1000},
+      "kind": {"enum": ["observed", "sourced_record", "model_inference", "unresolved_question"]},
+      "evidence_ids": {"type": "array", "minItems": 1, "maxItems": 12, "items": {"type": "string"}}}}}}
+}

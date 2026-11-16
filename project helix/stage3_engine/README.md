@@ -1,0 +1,13 @@
+# Helix Stage 3 adapter
+
+`vendor/*.py` are unmodified required Python modules from `playground` at commit `1cc494d`. The worker runs the original `stage3.run(..., save=False)` in a separate interpreter, avoiding module-name collisions with Helix Stage 2 and Finance Lab. The worker corrects the returned code-version metadata to the pinned commit; the engine's result and hash calculation are otherwise unchanged.
+
+`GET /api/stage3?property_id=4809147&budget=900000` returns the original `stage3.v1` object. Optional `reserve` and `suite` query parameters use the original engine's contract. An omitted reserve is passed as `None` and remains `unavailable`. A supplied suite that the original engine did not actually select is rejected instead of silently falling back to another space.
+
+The engine's `suite` is a suite name, or for an unnamed space `listing:<listing_id>:<square_feet>`. It is not the Helix Stage 1 stable ID or CoStar `space_id`. For the Broadway golden case, CoStar property `4809147`, listing `38268171`, space `19822761`, and 7,205 SF correspond to `listing:38268171:7205`. Multiple unnamed spaces on the same listing with the same size can collide; do not infer a unique space ID from that key. Without `suite`, the original engine selects the largest listed space.
+
+The Helix UI calls `GET /api/stage3/investigation?id=<handoff_id>[&reserve=<amount>]`. The worker checks the saved investigation's property, listing and space IDs against active CoStar records, rejects missing or colliding keys, and verifies the engine's inventory has the same exact listing and space before running. This prevents the original engine's default-largest-space fallback. The complete unchanged Stage 3 result is stored by investigation ID in the ignored `.stage3-results.json` file and can be retrieved later via `GET /api/stage3/result?id=<handoff_id>`; it is also available in the screen's expandable deterministic-output section. A subsequent run for the same investigation replaces its prior result.
+
+The original engine reads CoStar independently and does not consume the Helix Stage 2 physical profile; it reports that as unavailable. Stage 4 inputs preserve its own suite key. Finance Lab identifies its selection by CoStar property and space IDs, so a future caller must explicitly resolve and verify the mapping.
+
+The worker forces jurisdiction and neighborhood offline modes and the original engine uses cached-only compliance research. It copies existing local Stage 2 Census cache files into its ignored local cache when available. Missing caches remain missing evidence; no new web research or AI is run. Its generated cache is ignored and should not be committed. The response hash may differ from another environment if its source caches differ.

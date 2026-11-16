@@ -1,0 +1,23 @@
+[
+  {
+    "case_id": "grant-10607-structure-scope",
+    "address": "10607 Grant Rd",
+    "costar_claim": {"fact": "building_area", "value": 3000, "unit": "sqft", "scope_type": "building", "scope_id": "10607-building", "measurement_semantics": "gross_floor_area", "identity_key": "costar-property:grant-10607", "claim_id": "costar:grant:gba"},
+    "vexcel_claim": {"fact": "building_area", "value": 3984, "unit": "sqft", "scope_type": "structure", "scope_id": "nearest-vexcel-structure", "measurement_semantics": "ground_footprint", "identity_key": "costar-property:grant-10607", "claim_id": "vexcel:grant:footprint"},
+    "matterport_address": "10601 Grant Rd",
+    "expected": "not_comparable"
+  },
+  {
+    "case_id": "york-centre-suite-260-timeline",
+    "scan_attachment_date": "2020-01-15",
+    "tenant_move_in_date": "2020-07-01",
+    "expected": "resolved_by_timeline"
+  },
+  {
+    "case_id": "sam-houston-suite-155-attachment-date",
+    "scan_attachment_date": "2026-03-10",
+    "tenant_move_out_date": "2026-07-23",
+    "expected": "possible_conflict",
+    "date_semantics": "costar_attachment_date_not_verified_camera_capture"
+  }
+]

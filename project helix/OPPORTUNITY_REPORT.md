@@ -1,0 +1,19 @@
+# Opportunity intelligence backend
+
+This is the backend-only first phase. It does not change the screening engine or build the report interface.
+
+For a completed new investigation with saved Stage 1 discovery and Stage 3 screening, generate a report with `POST /api/opportunity-report/generate` and JSON body `{"investigation_id":"<id>"}`. Retrieve the latest report with `GET /api/opportunity-report?id=<id>`. Each response includes versioned source URLs for the complete Stage 1, Stage 2 and Stage 3 snapshots. A new generation retains earlier snapshots and reports on disk. The response format is described by `opportunity-report.schema.json`.
+
+Full discovery results are saved when a new property investigation starts. Earlier investigations may have retained only the selected listing; generation fails explicitly when their complete discovery report is unavailable. Run a new discovery and investigation to create a complete record. That workflow can call existing paid providers.
+
+The server sends GPT Sol bounded, source-indexed context, including every deterministic gate and shortlist candidate and a representative selection of physical observations. Omitted observations remain in the archived source snapshots. Model output is checked for structure, evidence references, and unchanged candidate order, but automatic checks cannot guarantee that each natural-language claim is supported by its citation. Review claims against sources.
+
+The model is `openai/gpt-6.1-sol` on OpenRouter. Input evidence is bounded to 120,000 UTF-8 bytes and output to 3,000 tokens; provider usage, cost and latency are recorded in `.opportunity-usage.jsonl`. Stage 1 snapshots, generated reports and usage logs are ignored by Git and may contain sensitive property or user data. Report generation makes a paid model call.
+
+## Checkpoint and next task
+
+The report combines validated Stage 1 discovery, Stage 2 investigation and unchanged Stage 3 screening into `helix.opportunity-intelligence.v1`. Source identity and the Stage 3 hash are checked before the model call. Model claims have typed classifications and references to archived source locations; citation validity does not prove semantic support. Generated reports and source snapshots are stored by investigation and generation ID. The first live smoke test used real Broadway Stage 2 and Stage 3 data but a synthetic Stage 1 fixture, because historical Stage 1 results were not saved. No complete production investigation has been validated end to end.
+
+Checkpoint tests: `python3 -m unittest discover -s 'project helix' -p 'test_opportunity_report.py' -q` (5 passed); intake (4), discovery (13), Stage 3 (5), and Finance Lab (8) also passed. The existing Stage 2 physical-profile test fails because the saved Broadway profile is 10,362 bytes against a 10,000-byte limit. Run package tests with `PYTHONPATH='project helix'` where needed. Finance Lab and physical-profile changes are separate uncommitted work.
+
+Next: implement the requested **adversarial Stage 2 versus Stage 3 physical feasibility audit** in the existing backend, without frontend work. Retrieve relevant evidence from the complete Stage 2 dossier for each shortlisted candidate, including observations excluded from the initial model context. Verify that any claimed conflict follows from cited evidence and applies to the selected property and suite; downgrade unsupported or scope-mismatched claims. Add a deterministic synthetic conflict fixture and tests for true conflicts, missing evidence, and building-versus-suite scope. Preserve all 26 outcomes, ranking, source snapshots, existing model limits and usage logging. Use a fresh complete investigation for live generation; do not reconstruct or alter historical source reports. No adversarial audit code was implemented at this checkpoint.

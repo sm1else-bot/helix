@@ -1,0 +1,258 @@
+{
+  "intake": {
+    "city": "Houston, TX",
+    "total_budget_usd": 500000.0,
+    "financing": "cash",
+    "business_preferences": "movie theater",
+    "open_to_ideas": true,
+    "transaction_types": [
+      "sale",
+      "lease"
+    ],
+    "acquisition_allocation": null,
+    "lease_horizon_years": null
+  },
+  "selected_listing": {
+    "property_id": 236138,
+    "listing_id": "22141592",
+    "space_id": "20324034",
+    "stable_id": "lease:22141592:20324034",
+    "address": "15603 W Hardy Rd",
+    "city": "Houston",
+    "state": "TX",
+    "property_type": "Flex",
+    "transaction_type": "lease",
+    "listing_status": "active",
+    "listing_status_raw": 1,
+    "availability_status": 0,
+    "area_min_sqft": 5941.0,
+    "area_max_sqft": 5941.0,
+    "asking_price_raw": null,
+    "asking_price_usd": null,
+    "sale_classification": null,
+    "rent_raw": {
+      "low": 6.5,
+      "high": 6.5,
+      "basis_code": 2,
+      "currency_code": 1
+    },
+    "rent_normalization": {
+      "status": "normalized",
+      "raw_low": 6.5,
+      "raw_high": 6.5,
+      "raw_basis_code": 2,
+      "raw_basis": "$/SF/year",
+      "currency": "USD",
+      "area_min_sqft": 5941.0,
+      "area_max_sqft": 5941.0,
+      "monthly_low_usd": 3218.04,
+      "monthly_high_usd": 3218.04,
+      "annual_low_usd": 38616.5,
+      "annual_high_usd": 38616.5,
+      "known_additional_charges": [],
+      "total_occupancy_cost_status": "unknown",
+      "missing_fields": [
+        "total occupancy charges (CAM/taxes/insurance/utilities) not provided"
+      ]
+    },
+    "lease_affordability": {
+      "3": {
+        "classification": "within_budget",
+        "monthly_cap_usd": 8888.89,
+        "budget_fit": 100.0
+      },
+      "5": {
+        "classification": "within_budget",
+        "monthly_cap_usd": 5333.33,
+        "budget_fit": 100.0
+      },
+      "10": {
+        "classification": "over_budget",
+        "monthly_cap_usd": 2666.67,
+        "budget_fit": 82.9
+      }
+    },
+    "budget_classification": "over_budget",
+    "known_additional_charges": [],
+    "additional_charges_evidence": {
+      "commonAreaMaintenanceState": 1,
+      "propertyTaxState": 0,
+      "leaseTermType": 5,
+      "serviceType": 13
+    },
+    "total_occupancy_cost_status": "unknown",
+    "source_updated_at": "2026-11-04T00:00:00-05:00",
+    "date_on_market": "2026-01-08T12:00:00-05:00",
+    "available_at": "2026-01-09T12:00:00-05:00",
+    "retrieved_at": "2026-11-15T03:08:12.537548+00:00",
+    "source": "CoStar",
+    "source_reference": "data/commercial-listing-summary.jsonl#22141592:20324034",
+    "original_evidence": {
+      "listing_id": 22141592,
+      "space": {
+        "id": 20324034,
+        "propertyFloorId": 681594,
+        "propertyId": 236138,
+        "floorName": 24,
+        "isFullFloor": false,
+        "suite": "350",
+        "availableOnDate": "2026-01-09T12:00:00-05:00",
+        "availabilityType": 0,
+        "serviceType": 13,
+        "spaceUse": 6,
+        "spaceType": 1,
+        "isExecutiveSuite": false,
+        "squareFeetMin": 5941.0,
+        "squareFeetMax": 5941.0,
+        "squareFeetMaxContiguous": 5941.0,
+        "rateLow": 6.5,
+        "rateHigh": 6.5,
+        "rateBasis": 2,
+        "monetaryUnit": 1,
+        "askingRateHasValue": true,
+        "isLeasePending": false,
+        "dateOnMarket": "2026-01-08T12:00:00-05:00",
+        "leaseTermType": 5,
+        "loadBay": {
+          "driveInBayState": 1,
+          "loadingDockState": 0,
+          "numDriveInBays": 1
+        },
+        "commonAreaMaintenanceAmount": 3.86,
+        "commonAreaMaintenanceState": 1,
+        "propertyTaxState": 0
+      },
+      "lease_summary": {
+        "askingRateBasis": 2,
+        "askingRateLow": 6.5,
+        "askingRateHigh": 6.5,
+        "serviceType": 13
+      },
+      "listing_status": 1
+    },
+    "missing_fields": [],
+    "lease_horizon_years": 10,
+    "verification": {
+      "stable_id": "lease:22141592:20324034",
+      "listing_id": "22141592",
+      "property_id": 236138,
+      "retrieved_at": "2026-11-15T02:57:16.903282+00:00",
+      "query_status": "results",
+      "claims": [
+        {
+          "claim_type": "address",
+          "costar_value": "15603 W Hardy Rd",
+          "unit": null,
+          "sources": [],
+          "verdict": "unverified",
+          "explanation": "No same-identity exact claim match was established from retrieved results.",
+          "source_independence": "not established"
+        },
+        {
+          "claim_type": "asking_rent_low",
+          "costar_value": 6.5,
+          "unit": "$/SF/year",
+          "sources": [],
+          "verdict": "unverified",
+          "explanation": "No same-identity exact claim match was established from retrieved results.",
+          "source_independence": "not established"
+        },
+        {
+          "claim_type": "asking_rent_high",
+          "costar_value": 6.5,
+          "unit": "$/SF/year",
+          "sources": [],
+          "verdict": "unverified",
+          "explanation": "No same-identity exact claim match was established from retrieved results.",
+          "source_independence": "not established"
+        },
+        {
+          "claim_type": "rent_basis",
+          "costar_value": "$/SF/year",
+          "unit": null,
+          "sources": [],
+          "verdict": "unverified",
+          "explanation": "No same-identity exact claim match was established from retrieved results.",
+          "source_independence": "not established"
+        },
+        {
+          "claim_type": "area",
+          "costar_value": 5941.0,
+          "unit": "SF",
+          "sources": [],
+          "verdict": "unverified",
+          "explanation": "No same-identity exact claim match was established from retrieved results.",
+          "source_independence": "not established"
+        }
+      ],
+      "search_results": [],
+      "independent_exact_claims": 0,
+      "overall_status": "unverified",
+      "query": "\"15603 W Hardy Rd\" CoStar listing 22141592 suite ",
+      "tavily_call_count": 1
+    },
+    "confidence": {
+      "source_reliability": {
+        "score": 90,
+        "status": "scored",
+        "basis": "50 points for traceable first-party CoStar provenance, 25 for active provider status, and 15 when source update is within the documented 180-day recency window. Not independently corroborated."
+      },
+      "data_completeness_consistency": {
+        "score": 100,
+        "status": "scored",
+        "basis": "Four required identity/status fields plus four completeness checks (area bounds, source update, price or normalized rent)."
+      },
+      "budget_fit": {
+        "score": 100,
+        "status": "scored",
+        "basis": "$11,111.11 monthly cap divided by normalized base rent; additional charges unknown."
+      },
+      "property_search_fit": {
+        "score": 100,
+        "status": "matched",
+        "basis": "The record matches the requested city and an authorized transaction type. No additional general property constraints were collected."
+      },
+      "factor_weights_percent": {
+        "source_reliability": 25,
+        "data_completeness_consistency": 25,
+        "budget_fit": 25,
+        "property_search_fit": 25
+      },
+      "overall_confidence": 98,
+      "overall_status": "complete",
+      "is_probability": false
+    },
+    "explanation": "Flex space at 15603 W Hardy Rd, Houston, TX offering 5,941 SF for lease at $6.50/SF/year ($3,218.04/month, $38,616.50/year). Classified within budget for 3-, 5-, and 10-year terms. Total occupancy charges (CAM/taxes/insurance/utilities) not provided.",
+    "acquisition_allocation_percent": 80,
+    "occupancy_budget_usd": 400000.0,
+    "monthly_rent_caps_usd": {
+      "3": 8888.89,
+      "5": 5333.33,
+      "10": 2666.67
+    }
+  },
+  "property_facts": {
+    "property_id": 236138,
+    "address": "15603 Hardy Rd",
+    "city": "Houston",
+    "state": "TX",
+    "postal_code": "770603131",
+    "latitude": 29.944369,
+    "longitude": -95.385271,
+    "property_type": "Flex",
+    "building_class": "Class B",
+    "gross_building_area_sqft": 46981.0,
+    "rentable_building_area_sqft": 46981.0,
+    "stories": 1,
+    "has_sprinklers": true,
+    "zoning_description": "N/A",
+    "parking_ratio": 0.68,
+    "matterport_model_ids": [
+      "NDMWnz1H9uV"
+    ],
+    "amenities": []
+  },
+  "property_facts_status": "available",
+  "handoff_status": "stage2_placeholder",
+  "message": "Selection saved for a future investigation stage. Stage 2 was not run."
+}
