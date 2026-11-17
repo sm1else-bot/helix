@@ -25,3 +25,7 @@ reports/data-pilot/sheets/
 reports/data-pilot/evidence/
 reports/data-pilot/keys.env
 .stage4-selections.json
+
+# Private offline capture archive
+/project helix/.offline-archive/
+/project helix/stage2/output/

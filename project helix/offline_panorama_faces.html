@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Helix — saved panorama faces</title>
+<style>
+  body { margin: 0; background: #102b27; color: #eef5ef; font: 16px system-ui, sans-serif; }
+  main { max-width: 1000px; margin: auto; padding: 24px; }
+  h1 { font-size: 1.5rem; } p { line-height: 1.5; color: #c4d6c9; }
+  .controls { display: flex; flex-wrap: wrap; gap: 8px; margin: 20px 0; }
+  button { border: 1px solid #8bb19b; background: #234a3f; color: white; border-radius: 8px; padding: 10px 15px; cursor: pointer; }
+  button[aria-pressed="true"] { background: #d8ead8; color: #102b27; }
+  img { display: block; width: min(100%, 760px); height: auto; background: #192d28; }
+</style>
+<main>
+  <h1>Saved Matterport panorama faces</h1>
+  <p>15603 W Hardy Rd · Floor 1 · one saved camera position</p>
+  <p>These are the six original cube faces saved from one panorama. Face orientation and connections to other positions are not established; this is a local face viewer, not a navigable 3D model or a complete tour.</p>
+  <div class="controls" aria-label="Panorama faces">
+    <button type="button" data-face="0" aria-pressed="true">Face 1</button>
+    <button type="button" data-face="1" aria-pressed="false">Face 2</button>
+    <button type="button" data-face="2" aria-pressed="false">Face 3</button>
+    <button type="button" data-face="3" aria-pressed="false">Face 4</button>
+    <button type="button" data-face="4" aria-pressed="false">Face 5</button>
+    <button type="button" data-face="5" aria-pressed="false">Face 6</button>
+  </div>
+  <img id="face" src="skybox_face_0.jpg" alt="Saved panorama, face 1 of 6">
+</main>
+<script>
+  const image = document.querySelector('#face');
+  document.querySelectorAll('[data-face]').forEach(button => button.addEventListener('click', () => {
+    document.querySelectorAll('[data-face]').forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+    const face = Number(button.dataset.face);
+    image.src = `skybox_face_${face}.jpg`;
+    image.alt = `Saved panorama, face ${face + 1} of 6`;
+  }));
+</script>
+</html>
